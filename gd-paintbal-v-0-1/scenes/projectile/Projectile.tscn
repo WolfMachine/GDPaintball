@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bkvhgdamgiafa"]
+
+[ext_resource type="Script" uid="uid://rqvx2ssu5wfh" path="res://scripts/projectile/projectile.gd" id="1_nskuf"]
+
+[node name="Projectile" type="Node2D" unique_id=863732701]
+script = ExtResource("1_nskuf")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=2097373984]

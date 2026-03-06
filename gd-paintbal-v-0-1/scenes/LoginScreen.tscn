@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bw7d54nusxcjv"]
+
+[ext_resource type="Script" uid="uid://cabspm8y3lxic" path="res://scripts/LoginScreen.gd" id="1_qucne"]
+
+[node name="LoginScreen" type="Node2D" unique_id=1045084004]
+
+[node name="Control" type="Control" parent="." unique_id=957947086]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qucne")
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1367068897]
+layout_mode = 0
+offset_right = 232.0
+offset_bottom = 162.0
+
+[node name="vbc" type="VBoxContainer" parent="Control" unique_id=1870175433]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 212.0
+offset_bottom = 161.0
+
+[node name="Label" type="Label" parent="Control/vbc" unique_id=578908483]
+layout_mode = 2
+text = "Login:"
+
+[node name="user" type="CenterContainer" parent="Control/vbc" unique_id=272708400]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Username" type="LineEdit" parent="Control/vbc/user" unique_id=523350700]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+placeholder_text = "username"
+max_length = 32
+
+[node name="pass" type="CenterContainer" parent="Control/vbc" unique_id=486071257]
+layout_mode = 2
+
+[node name="Password" type="LineEdit" parent="Control/vbc/pass" unique_id=1486938936]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+placeholder_text = "password"
+max_length = 32
+
+[node name="submit" type="HBoxContainer" parent="Control/vbc" unique_id=584777018]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="Control/vbc/submit" unique_id=281758434]
+layout_mode = 2
+text = "Submit
+"
+
+[node name="Status" type="Label" parent="Control/vbc" unique_id=914934874]
+layout_mode = 2

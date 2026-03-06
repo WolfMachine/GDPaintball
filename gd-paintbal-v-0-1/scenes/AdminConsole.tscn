@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dpkjkogfxrir0"]
+
+[ext_resource type="Script" uid="uid://cks3s5pswgttv" path="res://scripts/AdminConsole.gd" id="1_xsgun"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsgun"]
+bg_color = Color(0.16778648, 0.16778648, 0.16778648, 1)
+
+[node name="AdminConsole" type="Node2D" unique_id=862827759]
+
+[node name="Control" type="Control" parent="." unique_id=1071468165]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xsgun")
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1710486520]
+layout_mode = 0
+offset_right = 592.0
+offset_bottom = 420.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xsgun")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=67248794]
+layout_mode = 0
+offset_left = 13.0
+offset_right = 584.0
+offset_bottom = 397.0
+theme_override_constants/separation = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/VBoxContainer" unique_id=591600489]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/CenterContainer" unique_id=24094866]
+layout_mode = 2
+text = "Admin Console"
+
+[node name="TextEdit" type="TextEdit" parent="Control/VBoxContainer" unique_id=893640587]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+editable = false
+wrap_mode = 1
+
+[node name="LineEdit" type="LineEdit" parent="Control/VBoxContainer" unique_id=574006406]
+layout_mode = 2
+placeholder_text = "Command"
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=1148545801]
+layout_mode = 2
+text = "Send
+"

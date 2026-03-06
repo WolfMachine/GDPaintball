@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cedgohx1w385d"]
+
+[ext_resource type="Script" uid="uid://vguechaojybl" path="res://scripts/player/fire.gd" id="1_524rm"]
+[ext_resource type="Script" uid="uid://c0j2l4oqw12dd" path="res://scripts/player/movement.gd" id="1_gfjak"]
+[ext_resource type="Script" uid="uid://b1u7r5erv67d2" path="res://scripts/player/player.gd" id="1_npwbq"]
+[ext_resource type="Texture2D" uid="uid://hq2pvckiwbx4" path="res://assets/primatives/circle.png" id="1_wr5hl"]
+[ext_resource type="PackedScene" uid="uid://bkvhgdamgiafa" path="res://scenes/projectile/Projectile.tscn" id="2_tpg5x"]
+[ext_resource type="Texture2D" uid="uid://be00c4rs2dhpl" path="res://assets/primatives/Chevron.png" id="3_524rm"]
+[ext_resource type="Script" uid="uid://coe3mtemhin1v" path="res://scripts/player/aim.gd" id="4_tpg5x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gfjak"]
+radius = 32.0
+
+[node name="Player" type="Node2D" unique_id=1001133982]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_npwbq")
+
+[node name="Body" type="CharacterBody2D" parent="." unique_id=531875515]
+script = ExtResource("1_gfjak")
+
+[node name="Sprite2D" type="Sprite2D" parent="Body" unique_id=2085361349]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_wr5hl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=2142065954]
+shape = SubResource("CircleShape2D_gfjak")
+
+[node name="Camera2D" type="Camera2D" parent="Body" unique_id=999136599]
+enabled = false
+
+[node name="Marker" type="Sprite2D" parent="Body" unique_id=1015646759]
+scale = Vector2(0.085, 0.05)
+texture = ExtResource("3_524rm")
+script = ExtResource("4_tpg5x")
+rotation_offset_degrees = 90.0
+
+[node name="Fire" type="Node2D" parent="Body" unique_id=767609906]
+script = ExtResource("1_524rm")
+projectile_scene = ExtResource("2_tpg5x")
+projectile_power = 300.0

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://csrra8h80yb82"]
+
+[ext_resource type="Texture2D" uid="uid://cfjidolmb7r7" path="res://assets/tiles/untextured.png" id="1_1oml7"]
+[ext_resource type="Script" uid="uid://dr72fyktqnwvr" path="res://networking/UDPClient.gd" id="2_6eebf"]
+[ext_resource type="Script" uid="uid://bddrmj038sgn7" path="res://networking/NetworkManager.gd" id="2_i1jm3"]
+[ext_resource type="Script" uid="uid://pg4aepema5gf" path="res://networking/TCPClient.gd" id="3_gbddb"]
+[ext_resource type="Script" uid="uid://c5tletjdv3ttw" path="res://scripts/systems/PlayerManager.gd" id="4_qxiha"]
+[ext_resource type="Script" uid="uid://cucsdqlfwf8p6" path="res://networking/InputSender.gd" id="5_252at"]
+[ext_resource type="PackedScene" uid="uid://cedgohx1w385d" path="res://scenes/player/Player.tscn" id="5_i1jm3"]
+[ext_resource type="PackedScene" uid="uid://bw7d54nusxcjv" path="res://scenes/LoginScreen.tscn" id="8_qh0kd"]
+[ext_resource type="PackedScene" uid="uid://dpkjkogfxrir0" path="res://scenes/AdminConsole.tscn" id="9_yr1n6"]
+
+[node name="World" type="Node2D" unique_id=337523226]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=962803361]
+z_index = -10
+texture_repeat = 2
+position = Vector2(-317, -331)
+texture = ExtResource("1_1oml7")
+region_enabled = true
+region_rect = Rect2(0, 0, 4096, 4096)
+
+[node name="GameManager" type="Node" parent="." unique_id=559037335]
+
+[node name="PlayerManager" type="Node" parent="." unique_id=1076775326]
+script = ExtResource("4_qxiha")
+player_scene = ExtResource("5_i1jm3")
+
+[node name="UIManager" type="Node" parent="." unique_id=12204727]
+
+[node name="NetworkManager" type="Node" parent="." unique_id=1315724376]
+script = ExtResource("2_i1jm3")
+
+[node name="TCPClient" type="Node" parent="NetworkManager" unique_id=1598270674]
+script = ExtResource("3_gbddb")
+
+[node name="UDPClient" type="Node" parent="NetworkManager" unique_id=118401774]
+script = ExtResource("2_6eebf")
+
+[node name="InputSender" type="Node" parent="NetworkManager" unique_id=1530735731]
+script = ExtResource("5_252at")
+
+[node name="LoginScreen" parent="NetworkManager" unique_id=1045084004 instance=ExtResource("8_qh0kd")]
+position = Vector2(452, 200)
+
+[node name="AdminConsole" parent="NetworkManager" unique_id=862827759 instance=ExtResource("9_yr1n6")]
+position = Vector2(234, 100)
