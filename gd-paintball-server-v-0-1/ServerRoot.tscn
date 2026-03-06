@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://buhpj3or1iflh"]
+
+[ext_resource type="Script" uid="uid://d0lgfe382mwje" path="res://ServerMain.gd" id="1_qofgx"]
+[ext_resource type="Script" uid="uid://bmpsk7ulxu0c8" path="res://GameplayController.gd" id="2_337lq"]
+[ext_resource type="Script" uid="uid://cjaptt51kxge5" path="res://networking/ENetServer.gd" id="3_06emo"]
+[ext_resource type="Script" uid="uid://d375phxhnvy8s" path="res://networking/GameTCPServer.gd" id="4_ncola"]
+
+[node name="ServerRoot" type="Node" unique_id=174799606]
+
+[node name="ServerMain" type="Node" parent="." unique_id=1607092752]
+script = ExtResource("1_qofgx")
+
+[node name="GameplayController" type="Node" parent="." unique_id=1596553615]
+script = ExtResource("2_337lq")
+
+[node name="ENetServer" type="Node" parent="." unique_id=292777027]
+script = ExtResource("3_06emo")
+
+[node name="GameTCPServer" type="Node" parent="." unique_id=2120454210]
+script = ExtResource("4_ncola")
